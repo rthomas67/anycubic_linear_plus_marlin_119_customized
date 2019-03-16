@@ -15,12 +15,15 @@ the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
 # Changes from Stock Marlin 1.1.9
 The changes from stock are as follows:
 * Added section for delta style printer settings
-* Reduced BAUDRATE *(01)*
-* Changed default MOTHERBOARD to BOARD_RAMPS_13_EFB//33 *(01)*
+* Reduced BAUDRATE **(01)**
+* Changed default MOTHERBOARD to BOARD_RAMPS_13_EFB **(01)**
+* Changed CUSTOM_MACHINE_NAME to LinearPlus **(02)**
+* Changed DEFAULT_NOMINAL_FILAMENT_DIA to 1.75 **(01)**
 
 
-# Common Reasons for Changes
-* *(01)* - Matches a similar change Anycubic made to an older version of Marlin
+# Reasons for Changes
+* **(01)** - Matches a similar change Anycubic made to an older version of Marlin
   * See: https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h
   * See: https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration_adv.h
+* **(02)** - Helps confirm that the customized firmware config was loaded.
   
