@@ -1066,11 +1066,6 @@
   // The height can be set with M420 Z<height>
   #define ENABLE_LEVELING_FADE_HEIGHT
 
-
-  // Set the boundaries for probing (where the probe can reach).
-  #define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 15)
-
-
   // For Cartesian machines, instead of dividing moves on mesh boundaries,
   // split up moves into short segments like a Delta. This follows the
   // contours of the bed more closely than edge-to-edge straight moves.
@@ -1095,6 +1090,9 @@
   // Set the number of grid points per dimension.
   #define GRID_MAX_POINTS_X 7
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+
+  // Set the boundaries for probing (where the probe can reach).
+  #define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 15)
 
   // Set the boundaries for probing (where the probe can reach).
   #define LEFT_PROBE_BED_POSITION -(DELTA_PROBEABLE_RADIUS)+5
