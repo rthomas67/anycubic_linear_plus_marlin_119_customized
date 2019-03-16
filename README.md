@@ -116,6 +116,10 @@ the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
   * Note: Anycubic did not change these values from their stock Marlin settings, even though though those settings probably exceed the hardware capabilities.
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L993
   * TODO: Review whether this should turn the fan on full right away.
+* Enabled NOZZLE_PARK_FEATURE
+  * This must be enabled to enable the ADVANCED_PAUSE_FEATURE
+  * See: http://marlinfw.org/docs/configuration/configuration.html#nozzle-park
+  * TODO: Review meaning of Z value == 20.  This may not be appropriate, or might be ignored for Delta printers.
 * Enabled SDSUPPORT
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L1163
 * Enabled REPRAP_DISCOUNT_SMART_CONTROLLER
