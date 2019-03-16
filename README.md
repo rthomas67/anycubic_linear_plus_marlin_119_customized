@@ -12,8 +12,7 @@ etc, so it is a challenge to diff/compare the older Anycubic customized firmware
 against a newer release of Marlin.  This might be a better starting point than
 the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
 
-# Changes from Stock Marlin 1.1.9
-The changes from stock are as follows:
+# Changes from Stock Marlin 1.1.9 - Configuration.h
 * Added section for delta style printer settings
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L74
 * Reduced BAUDRATE
@@ -112,21 +111,40 @@ The changes from stock are as follows:
   * TODO: Find out why this value is expressed as #*#, and why Anycubic set it to 60*60 instead of 4*60
 * Enabled EEPROM_SETTINGS
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L959
-* 
-  * **&dagger;&dagger;** 
-* 
-  * **&dagger;&dagger;** 
-* 
-  * **&dagger;&dagger;** 
-* 
-  * **&dagger;&dagger;** 
-* 
-  * **&dagger;&dagger;** 
-* 
-  * **&dagger;&dagger;** 
-  
+* Adjusted default PREHEAT_* settings
+  * Note: This is from: https://github.com/featherfeet/anycubic-kossel-delta-linear-plus-marlin-firmware/blob/master/Configuration.h#L1237
+  * Note: Anycubic did not change these values from their stock Marlin settings, even though though those settings probably exceed the hardware capabilities.
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L993
+  * TODO: Review whether this should turn the fan on full right away.
+* Enabled SDSUPPORT
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L1163
+* Enabled REPRAP_DISCOUNT_SMART_CONTROLLER
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L1307
+
 # Reasons for Changes
 * **&dagger;&dagger;** - Matches the same/similar change Anycubic made to an older version of Marlin
-  * See: https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h
-  * See: https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration_adv.h
 * **(02)** - Helps confirm that the customized firmware config was loaded.
+
+
+# Changes from Stock Marlin 1.1.9 - Configuration_adv.h
+* Changed THERMAL_PROTECTION_PERIOD to 10
+  * **&ddagger;&ddagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration_adv.h#L77
+* Changed THERMAL_PROTECTION_HYSTERESIS to 11
+  * **&ddagger;&ddagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration_adv.h#L78
+* Changed WATCH_TEMP_PERIOD to 9
+  * **&ddagger;&ddagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration_adv.h#L89
+* Enabled and configured ADVANCED_PAUSE_FEATURE
+  * Note: Used example from: https://github.com/featherfeet/anycubic-kossel-delta-linear-plus-marlin-firmware/blob/master/Configuration_adv.h#L881
+* Enabled and configured CUSTOM_USER_MENUS
+  * Note Used example from: https://github.com/featherfeet/anycubic-kossel-delta-linear-plus-marlin-firmware/blob/master/Configuration_adv.h#L1417
+* Enabled ACTION_ON_PAUSE
+  * Example from: https://github.com/featherfeet/anycubic-kossel-delta-linear-plus-marlin-firmware/blob/master/Configuration_adv.h#L1453
+* Enabled ACTION_ON_RESUME
+  * Example from: https://github.com/featherfeet/anycubic-kossel-delta-linear-plus-marlin-firmware/blob/master/Configuration_adv.h#L1454
+* Changed I2CPE_ENC_1_EC_METHOD to I2CPE_ECM_NONE
+  * Example from: https://github.com/featherfeet/anycubic-kossel-delta-linear-plus-marlin-firmware/blob/master/Configuration_adv.h#L1489
+  * TODO: Find out why this was set.  Is it related to the knob on the LCD panel?
+* Changed I2CPE_ENC_2_EC_METHOD to I2CPE_ECM_NONE
+  * Example from: https://github.com/featherfeet/anycubic-kossel-delta-linear-plus-marlin-firmware/blob/master/Configuration_adv.h#L1501
+  * TODO: Find out why this was set.  The Anycubic Linear Plus has only one encoder knob.
+  
