@@ -33,10 +33,10 @@ the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
   * https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L477
 * Enabled USE_XMAX_PLUG, USE_YMAX_PLUG, USE_ZMAX_PLUG
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L478
-* Changed DEFAULT_AXIS_STEPS_PER_UNIT values
-  * Z-Axis value changed to match other axes at 80
-  * Extruder-Axis value changed to 96
-  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L530
+* Changed DEFAULT_AXIS_STEPS_PER_UNIT and DEFAULT_XYZ_STEPS_PER_UNIT to calculated values
+  * **&dagger;&dagger;** No longer as simple as: https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L530
+  * Note: If literal values are filled in, there is a Verify/SanityCheck error because DEFAULT_XYZ_STEPS_PER_UNIT is missing.
+  * See: https://github.com/MarlinFirmware/Marlin/blob/1.1.x/Marlin/example_configurations/delta/Anycubic/Kossel/Configuration.h#L723
 * Changed DEFAULT_MAX_FEEDRATE values
   * All speeds at 200 (not sure why Anycubic would set extruder axis like this)
   * See: http://marlinfw.org/docs/configuration/configuration.html#default-steps-per-mm-
