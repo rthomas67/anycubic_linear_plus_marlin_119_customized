@@ -850,6 +850,9 @@
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -15.9   // Z offset: -below +above  [the nozzle]
 
+// // Certain types of probes need to stay away from edges
+#define MIN_PROBE_EDGE 5
+
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000
 
@@ -1092,16 +1095,10 @@
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-  #define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 15)
-
-  // Set the boundaries for probing (where the probe can reach).
-  #define LEFT_PROBE_BED_POSITION -(DELTA_PROBEABLE_RADIUS)+5
-  #define RIGHT_PROBE_BED_POSITION DELTA_PROBEABLE_RADIUS-5
-  #define FRONT_PROBE_BED_POSITION -(DELTA_PROBEABLE_RADIUS)+5
-  #define BACK_PROBE_BED_POSITION DELTA_PROBEABLE_RADIUS-5
-
-  // The Z probe minimum outer margin (to validate G29 parameters).
-  #define MIN_PROBE_EDGE 10
+  #define LEFT_PROBE_BED_POSITION -(DELTA_PRINTABLE_RADIUS)+MIN_PROBE_EDGE
+  #define RIGHT_PROBE_BED_POSITION DELTA_PRINTABLE_RADIUS-MIN_PROBE_EDGE
+  #define FRONT_PROBE_BED_POSITION -(DELTA_PRINTABLE_RADIUS)+MIN_PROBE_EDGE
+  #define BACK_PROBE_BED_POSITION DELTA_PRINTABLE_RADIUS-MIN_PROBE_EDGE
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
