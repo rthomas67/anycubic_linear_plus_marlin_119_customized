@@ -15,77 +15,118 @@ the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
 # Changes from Stock Marlin 1.1.9
 The changes from stock are as follows:
 * Added section for delta style printer settings
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L74
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L74
 * Reduced BAUDRATE
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L166
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L166
 * Changed default MOTHERBOARD to BOARD_RAMPS_13_EFB
   * Note: Used defined name from boards.h instead of numeric value.
-  * **(&dagger;)** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L174
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L174
 * Changed CUSTOM_MACHINE_NAME to LinearPlus **(02)**
 * Changed DEFAULT_NOMINAL_FILAMENT_DIA to 1.75
   * Not sure why Anycubic left this at 3.00 since the printer uses 1.75
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L1498
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L1498
 * Enabled TEMP_SENSOR_BED
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L297
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L297
 * Disabled USE_XMIN_PLUG and USE_YMIN_PLUG
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L475
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L475
 * Added comment about why USE_ZMIN_PLUG is enabled (bed leveling probe)
   * Anycubic didn't bother with this.
   * https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L477
 * Enabled USE_XMAX_PLUG, USE_YMAX_PLUG, USE_ZMAX_PLUG
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L478
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L478
 * Changed DEFAULT_AXIS_STEPS_PER_UNIT values
   * Z-Axis value changed to match other axes at 80
   * Extruder-Axis value changed to 96
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L530
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L530
 * Changed DEFAULT_MAX_FEEDRATE values
   * All speeds at 200 (not sure why Anycubic would set extruder axis like this)
   * See: http://marlinfw.org/docs/configuration/configuration.html#default-steps-per-mm-
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L537
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L537
 * Changed DEFAULT_MAX_ACCELERATION values
   * All at 3000 (not sure why Anycubic would set extruder axis like this)
   * See: http://marlinfw.org/docs/configuration/configuration.html#default-steps-per-mm-
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L545
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L545
 * Changed DEFAULT_TRAVEL_ACCELERATION to 1500
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L557
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L557
 * Changed DEFAULT_XJERK, DEFAULT_YJERK, DEFAULT_ZJERK to match each other at 5.0
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L566
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L566
 * Enabled FIX_MOUNTED_PROBE
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L591
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L591
 * Changed [X,Y,Z]_PROBE_OFFSET_FROM_EXTRUDER values to 0,0,15.9 for the v2 probe
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L622
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L622
 * Changed Z_PROBE_OFFSET_RANGE_MIN to -40
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L706
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L706
 * Enabled Z_MIN_PROBE_REPEATABILITY_TEST
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L684
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L684
 * Changed INVERT_Y_DIR to true
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L733
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L733
 * Changed INVERT_E0_DIR to true
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L739
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L739
 * Changed INVERT_E1_DIR to true
   * **(03)** This prepares for an additional extruder, assuming it would also be direct drive, not geared.
 * Changed X_HOME_DIR, X_HOME_DIR, X_HOME_DIR from -1 to 1
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L752
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L752
 * Changed X_BED_SIZE and Y_BED_SIZE to be calculated as DELTA_PRINTABLE_RADIUS * 2
   * (04) This is a new setting in Marlin 1.1.5 (so it wasn't in Anycubic's 1.1.3 customizations)
   * See: http://marlinfw.org/docs/configuration/configuration.html#homing-direction - "Movement Bounds" section
 * Changed X_MIN_POS and Y_MIN_POS to be set to -(DELTA_PRINTABLE_RADIUS)
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L762
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L762
 * Changed X_MAX_POS and Y_MAX_POS to be set to DELTA_PRINTABLE_RADIUS
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L765
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L765
 * Changed Z_MAX_POS to match MANUAL_Z_HOME_POS
-  * **&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L767
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L767
+* Enabled AUTO_BED_LEVELING_BILINEAR
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L843
+* Enabled G26_MESH_VALIDATION
+  * This is a new setting in Marlin 1.1.7 (so it wasn't in Anycubic's 1.1.3 customizations)
+  * See: http://marlinfw.org/docs/configuration/configuration.html#bed-leveling - "G26 Mesh Validation Pattern" section
+  * This enables the G26 gcode to print a test pattern without a model, slicer, etc.
+* Changed GRID_MAX_POINTS_X to 9
+  * Note: This has been renamed in Marlin from ABL_GRID_MAX_POINTS
+  * See: https://github.com/MarlinFirmware/Marlin/blob/1.1.x/Marlin/SanityCheck.h#L201
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L853
+  * Note: Unless your print bed is really warped, 9 x 9 might be excessive.  7 x 7 might be enough.
+* Added #define variable DELTA_PROBEABLE_RADIUS to use while setting value for ***_PROBE_BED_POSITION
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L863
+* Changed [LEFT,RIGHT,FRONT,BACK]_PROBE_BED_POSITION values to values calculated from DELTA_PROBEABLE_RADIUS
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L864
+* Enabled PROBE_PT_[1,2,3]_[X,Y] override values
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L899
+* Enabled a Z_PROBE_END_SCRIPT that executes:
+  * M500 - Save settings to EEPROM
+    * See: http://marlinfw.org/docs/gcode/M500.html
+  * G28 F4000 - Auto Home at rate: 4000
+    * See: http://marlinfw.org/docs/gcode/G028.html
+  * M84 - Disable Steppers
+    * See: http://marlinfw.org/docs/gcode/M018.html
+  * Note: This is not in the Anycubic version.  This idea came from:
+    * https://github.com/featherfeet/anycubic-kossel-delta-linear-plus-marlin-firmware/blob/master/Configuration.h#L1096
+* Enabled BED_CENTER_AT_0_0
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L918
+* Enabled MANUAL_Z_HOME_POS and set value to DELTA_HEIGHT
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L924
+  * Note: Anycubic version uses a literal value.  This uses DELTA_HEIGHT, defined in the "Delta Settings" block instead
+* Disabled HOMING_FEEDRATE_XY and enabled HOMING_FEEDRATE_Z with a value of 60*60
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L942
+  * See: http://marlinfw.org/docs/configuration/configuration.html#z-safe-homing
+  * TODO: Find out why this value is expressed as #*#, and why Anycubic set it to 60*60 instead of 4*60
+* Enabled EEPROM_SETTINGS
+  * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L959
 * 
-  * **&dagger;** 
+  * **&dagger;&dagger;** 
 * 
-  * **&dagger;** 
+  * **&dagger;&dagger;** 
 * 
-  * **&dagger;** 
+  * **&dagger;&dagger;** 
 * 
-  * **&dagger;** 
+  * **&dagger;&dagger;** 
+* 
+  * **&dagger;&dagger;** 
+* 
+  * **&dagger;&dagger;** 
   
 # Reasons for Changes
-* **&dagger;** - Matches the same/similar change Anycubic made to an older version of Marlin
+* **&dagger;&dagger;** - Matches the same/similar change Anycubic made to an older version of Marlin
   * See: https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h
   * See: https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration_adv.h
 * **(02)** - Helps confirm that the customized firmware config was loaded.
