@@ -12,6 +12,9 @@ etc, so it is a challenge to diff/compare the older Anycubic customized firmware
 against a newer release of Marlin.  This might be a better starting point than
 the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
 
+* For the complete set of changes from stock Marlin 1.1.9 in this repo
+  * https://github.com/rthomas67/anycubic_linear_plus_marlin_119_customized/compare/593695..master
+
 # Changes from Stock Marlin 1.1.9 - Configuration.h
 * Added section for delta style printer settings
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L74
