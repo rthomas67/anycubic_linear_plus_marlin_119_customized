@@ -164,13 +164,13 @@ but it is more convenient to actually flash the firmware to the printer from a d
   * power off the printer
   * unplug the USB cable
   * switch the power jumper on the Trigorilla board from DC to USB
-    * (Without doing this, avrdude may fail with a "stk500v2_ReceiveMessage(): timeout" error)
+    * (Without doing this, avrdude may fail with a **"stk500v2_ReceiveMessage(): timeout"** error)
   * plug the USB cable back into the Trigorilla board
   * open a shell (ssh) to the Raspberry Pi
   * be sure nothing else like Octoprint is connected to the controller board (i.e. disable any auto-reconnect settings if necessary)
-  * run command: *sudo avrdude -p m2560 -b 115200 -P /dev/ttyUSB0 -c wiring -D -U flash:r:anycubic_kossel_linear_plus_original_firmware.hex:i*
+  * run command: **sudo avrdude -p m2560 -b 115200 -P /dev/ttyUSB0 -c wiring -D -U flash:r:anycubic_kossel_linear_plus_original_firmware.hex:i**
     * Note: This assumes the board was assigned to /dev/ttyUSB0, but double check that
-  * run command: *sudo avrdude -p m2560 -b 115200 -P /dev/ttyUSB0 -c wiring -D -U eeprom:r:anycubic_kossel_linear_plus_original_eeprom.hex:i*
+  * run command: **sudo avrdude -p m2560 -b 115200 -P /dev/ttyUSB0 -c wiring -D -U eeprom:r:anycubic_kossel_linear_plus_original_eeprom.hex:i**
   * unplug the USB cable
   * switch the power jumper on the Trigorilla board back to DC
   * plugin the USB cable back in
@@ -178,4 +178,4 @@ but it is more convenient to actually flash the firmware to the printer from a d
 
 * To write/upload/flash new firmware, follow the same instructions to temporarily switch to USB power on the Trigorilla board,
 but instead of reading from memory...
-  * run command: *sudo avrdude -p m2560 -b 115200 -P /dev/ttyUSB0 -c wiring -D -U flash:w:my_new_irmware.hex:i*
+  * run command: **sudo avrdude -p m2560 -b 115200 -P /dev/ttyUSB0 -c wiring -D -U flash:w:my_new_firmware.hex:i**
