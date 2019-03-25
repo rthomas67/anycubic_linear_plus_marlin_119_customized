@@ -14,7 +14,7 @@ the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
 
 * For the complete set of changes from stock Marlin 1.1.9 in this repo
   * https://github.com/rthomas67/anycubic_linear_plus_marlin_119_customized/compare/593695..master
-
+  
 # Changes from Stock Marlin 1.1.9 - Configuration.h
 * Added section for delta style printer settings
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L74
@@ -154,4 +154,28 @@ the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
 * Changed I2CPE_ENC_2_EC_METHOD to I2CPE_ECM_NONE
   * Example from: https://github.com/featherfeet/anycubic-kossel-delta-linear-plus-marlin-firmware/blob/master/Configuration_adv.h#L1501
   * TODO: Find out why this was set.  The Anycubic Linear Plus has only one encoder knob.
-  
+
+
+# Backup and/or Flash Help
+These instructions assume that the Arduino IDE compiles and exports a .hex version of the firmware on a workstation,
+but it is more convenient to actually flash the firmware to the printer from a different machine like a Raspberry Pi (perhaps running Octoprint).
+
+* To read/download/back-up the original firmware and/or eeprom contents from the Trigorilla ATMega2560 controller board, using a USB connected raspberry pi.
+  * power off the printer
+  * unplug the USB cable
+  * switch the power jumper on the Trigorilla board from DC to USB
+    * (Without doing this, avrdude may fail with a "stk500v2_ReceiveMessage(): timeout" error)
+  * plug the USB cable back into the Trigorilla board
+  * open a shell (ssh) to the Raspberry Pi
+  * be sure nothing else like Octoprint is connected to the controller board (i.e. disable any auto-reconnect settings if necessary)
+  * run command: *sudo avrdude -p m2560 -b 115200 -P /dev/ttyUSB0 -c wiring -D -U flash:r:anycubic_kossel_linear_plus_original_firmware.hex:i*
+    * Note: This assumes the board was assigned to /dev/ttyUSB0, but double check that
+  * run command: *sudo avrdude -p m2560 -b 115200 -P /dev/ttyUSB0 -c wiring -D -U eeprom:r:anycubic_kossel_linear_plus_original_eeprom.hex:i*
+  * unplug the USB cable
+  * switch the power jumper on the Trigorilla board back to DC
+  * plugin the USB cable back in
+  * power on the printer
+
+* To write/upload/flash new firmware, follow the same instructions to temporarily switch to USB power on the Trigorilla board,
+but instead of reading from memory...
+  * run command: *sudo avrdude -p m2560 -b 115200 -P /dev/ttyUSB0 -c wiring -D -U flash:w:my_new_irmware.hex:i*
