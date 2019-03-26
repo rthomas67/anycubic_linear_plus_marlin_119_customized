@@ -14,10 +14,16 @@ the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
 
 * For the complete set of changes from stock Marlin 1.1.9 in this repo
   * https://github.com/rthomas67/anycubic_linear_plus_marlin_119_customized/compare/593695..master
-  
+
 # Changes from Stock Marlin 1.1.9 - Configuration.h
 * Added section for delta style printer settings
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L74
+  * Details
+    * DELTA_PRINTABLE_RADIUS 110 // Sets printable area to 220 diameter (not 230 as marketing specs say for the linear plus)
+      * Anycubic 1.1.4 based firmware settings has this even lower at 105
+        * https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L102
+      * See: https://www.thingiverse.com/groups/anycubic-kossel/forums/general/topic:19505
+    * Enabled G33 DELTA_AUTO_CALIBRATION - Menu options for using the Z-probe to measure various calibration settings.
 * Reduced BAUDRATE
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L166
 * Changed default MOTHERBOARD to BOARD_RAMPS_13_EFB
@@ -56,6 +62,9 @@ the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L591
 * Changed [X,Y,Z]_PROBE_OFFSET_FROM_EXTRUDER values to 0,0,15.9 for the v2 probe
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L622
+  * See: https://github.com/MarlinFirmware/Marlin/blob/1.1.x/Marlin/example_configurations/delta/Anycubic/Kossel/images/Version2Probe.jpg
+  * It isn't clear whether this should be 15.9 or 16.8, or 16.6 (which was in the firmware as shipped - retrieved by M851)
+    * See: https://github.com/MarlinFirmware/Marlin/blob/1.1.x/Marlin/example_configurations/delta/Anycubic/Kossel/Configuration.h#L918
 * Changed Z_PROBE_OFFSET_RANGE_MIN to -40
   * **&dagger;&dagger;** https://github.com/ANYCUBIC-3D/ANYCUBIC_Kossel_Source_Code/blob/master/ANYCUBIC_Kossel_Plus_Beta2/Configuration.h#L706
 * Enabled Z_MIN_PROBE_REPEATABILITY_TEST

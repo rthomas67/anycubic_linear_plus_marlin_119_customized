@@ -98,6 +98,11 @@
 
   #endif
 
+  // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
+  // This assumes the "reachable" area has diameter 220mm even though the printer marketing specs
+  // claim a 230mm printable area
+  #define DELTA_PRINTABLE_RADIUS 110.0 // mm
+
   #if ENABLED(DELTA_AUTO_CALIBRATION) || ENABLED(DELTA_CALIBRATION_MENU)
     // Set the radius for the calibration probe points - max 0.9 * DELTA_PRINTABLE_RADIUS for non-eccentric probes
     //#define DELTA_CALIBRATION_RADIUS 121.5 // mm
@@ -105,9 +110,6 @@
     // Set the steprate for papertest probing
     #define PROBE_MANUALLY_STEP 0.025
   #endif
-
-  // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-  #define DELTA_PRINTABLE_RADIUS 110.0 // mm
 
   // Center-to-center distance of the holes in the diagonal push rods.
   #define DELTA_DIAGONAL_ROD 271.5 // mm
@@ -856,6 +858,9 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 0  // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: -front +behind [the nozzle]
+// 16.6 is the measurement for the v2 probe (blue and black) on the Linear Plus delivered in 2019
+// from the firmware as delivered (from M851) - Firmware defaults are different in Marlin (-16.8), and
+// older Anycubic customizations (-15.9)
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -16.6   // Z offset: -below +above  [the nozzle]
 
 // // Certain types of probes need to stay away from edges
@@ -995,7 +1000,7 @@
 #endif
 
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS) || ENABLED(MAX_SOFTWARE_ENDSTOPS)
-  //#define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
+  #define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
 #endif
 
 /**
