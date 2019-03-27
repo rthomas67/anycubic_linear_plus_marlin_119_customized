@@ -27,7 +27,8 @@ wlibdir="$(cyg2win $libdir)"
 cwd=$(pwd)
 wcwd="$(cyg2win $cwd)"
 
-woutputdir="${wcwd}/arduino-compile-output"
+outputdir="${cwd}/arduino-compile-output"
+woutputdir="$(cyg2win $outputdir)"
 
 if [ ! -d $outputdir ]; then
     mkdir -p $outputdir
