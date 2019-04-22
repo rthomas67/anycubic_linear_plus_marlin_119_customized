@@ -5,8 +5,10 @@ difference like they're not set up for the "plus" size printer, or they're
 using some other stepper driver.  So, my intent with this is to include only the
 core tweaks and changes from stock Marlin 1.1.9 config files to set it up for
 the stock Anycubic Linear Plus delta printer (circa early 2019).
+* For the complete set of changes from stock Marlin 1.1.9 in this repo
+  * https://github.com/rthomas67/anycubic_linear_plus_marlin_119_customized/compare/593695..master
 
-#Important!!
+# Important!!
 Using Marlin 1.1.9 on the Anycubic Linear Plus may cause this "failed autohome after printing" issue:
 * https://github.com/MarlinFirmware/Marlin/issues/11676
 * The most likely explanation seems to be that the extruder stepper motor wire
@@ -27,9 +29,6 @@ formatting from multiple-eol comments to blocks, corrected spelling, changed wor
 etc, so it is a challenge to diff/compare the older Anycubic customized firmware
 against a newer release of Marlin.  This might be a better starting point than
 the Anycubic firmware source, if the goal is to get Marlin v1.1.9 running.
-
-* For the complete set of changes from stock Marlin 1.1.9 in this repo
-  * https://github.com/rthomas67/anycubic_linear_plus_marlin_119_customized/compare/593695..master
 
 # Changes from Stock Marlin 1.1.9 - Configuration.h
 * Added section for delta style printer settings
