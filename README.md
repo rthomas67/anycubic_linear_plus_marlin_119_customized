@@ -6,6 +6,22 @@ using some other stepper driver.  So, my intent with this is to include only the
 core tweaks and changes from stock Marlin 1.1.9 config files to set it up for
 the stock Anycubic Linear Plus delta printer (circa early 2019).
 
+#Important!!
+Using Marlin 1.1.9 on the Anycubic Linear Plus may cause this "failed autohome after printing" issue:
+* https://github.com/MarlinFirmware/Marlin/issues/11676
+* The most likely explanation seems to be that the extruder stepper motor wire
+is not adequately noise-isolated from the endstop switch wires.  
+* One solution suggests placing a small capacitor across the endstop switch connectors, but
+that could introduce a timing delay on the switch.
+* Another solution suggests adding an M84 before the G28 in the slicer's "end.gcode" to
+turn off all the stepper motors (including the extruder) before telling the firmware to 
+begin the autohome sequence.
+* The comments on the github issue contained some speculation that this problem is 
+fixed in Marlin 2.0.0, but there were also conflicting reports that it is not fixed
+ there either.
+* Comments also mentioned using a firmware feature called ENDSTOP_NOISE_FILTER but
+there seemed to be consensus that it does not help.
+
 * The maintainers of Marlin have rearranged several things, changed comment
 formatting from multiple-eol comments to blocks, corrected spelling, changed wording,
 etc, so it is a challenge to diff/compare the older Anycubic customized firmware
